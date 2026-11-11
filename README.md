@@ -53,7 +53,7 @@ Nội dung thư mục:
 **Cách dùng:**
 
 1. Tải thư mục từ Drive về, đặt tên là `out` và để **cạnh** `data_topic.py` (cùng cấp với các tệp `.py`).
-2. Chỉ muốn nạp Neo4j: dùng ngay `nodes.csv` và `relationships.csv`, bỏ qua bước thu thập (mục 6).
+2. Chỉ muốn nạp Neo4j: dùng ngay `nodes.csv` và `relationships.csv`, bỏ qua bước thu thập (mục 5).
 3. Muốn chạy lại phần xử lý mà không gọi API: giữ `raw_papers.jsonl` và `refs_cache.json` trong `out/` rồi chạy `python data_topic.py`. Chương trình tự dùng lại hai tệp này, chỉ dựng lại các tệp CSV (khoảng một phút).
 4. Muốn thu thập lại từ đầu: xóa `raw_papers.jsonl` và `refs_cache.json` rồi chạy `python data_topic.py`.
 
@@ -292,8 +292,8 @@ Tiền tố của `id` trong `nodes.csv`: `P_` (Paper, theo PMID), `A_` (Author)
 | Chạy `data_topic.py` bị ngắt giữa chừng | Chạy lại cùng lệnh, chương trình tiếp tục từ dữ liệu đã lưu đệm. |
 | Nhiều dòng `HTTP 429` hoặc `HTTP 5xx` | Tăng `SLEEP` (ví dụ 0.5) để giảm tốc độ gọi API. |
 | Neo4j báo `Connection to instance failed` | Kiểm tra instance có đang **RUNNING** không; nếu **STOPPED** thì bấm Start. Đừng đóng cửa sổ PowerShell mà Neo4j mở ra. |
-| `LOAD CSV` báo không tìm thấy tệp | Tệp chưa nằm đúng thư mục `import` của instance (mục 7.2), hoặc `neo4j.conf` trỏ import sang thư mục khác. |
-| Không thấy thư mục `import` | Tự tạo thư mục tên `import` trong thư mục instance (mục 7.2). |
+| `LOAD CSV` báo không tìm thấy tệp | Tệp chưa nằm đúng thư mục `import` của instance (mục 6.2), hoặc `neo4j.conf` trỏ import sang thư mục khác. |
+| Không thấy thư mục `import` | Tự tạo thư mục tên `import` trong thư mục instance (mục 6.2). |
 | Truy vấn hãng dược trả về 0 dòng | Nạp lại `nodes.csv` bản mới nhất (lệnh nạp `is_pharma` trong `queries.cypher` đã dùng `trim` và `toLower`). |
 
 ## 12. Nguồn dữ liệu

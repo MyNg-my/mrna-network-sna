@@ -27,6 +27,7 @@ Dự án thu thập 5000 bài báo về chủ đề **mRNA vaccine** từ Europe
 ├── pharma_papers.py     đếm số bài theo tổ chức từ author_mentions.csv
 ├── stats_nx.py          thống kê đồ thị đồng tác giả bằng NetworkX
 ├── queries.cypher       nạp dữ liệu vào Neo4j và truy vấn thống kê
+├── sceenshort                    
 └── README.md
 ```
 
@@ -214,7 +215,7 @@ Kết quả tham chiếu (bộ dữ liệu 5000 bài):
 | Journal | 1.298 |
 | Topic | 1.251 |
 | Country | 49 |
-| Organization | [điền theo bản nạp cuối] |
+| Organization | 8652 |
 
 | Quan hệ | Số cạnh |
 |---|---|
@@ -225,7 +226,9 @@ Kết quả tham chiếu (bộ dữ liệu 5000 bài):
 | PUBLISHED_IN | 4.999 |
 | FIRST_AUTHOR_OF | 4.997 |
 | LAST_AUTHOR_OF | 4.669 |
-| AFFILIATED_WITH, COLLABORATES_WITH, LOCATED_IN | [điền theo bản nạp cuối] |
+| AFFILIATED_WITH | 44260 |
+| COLLABORATES_WITH | 31808 |
+| LOCATED_IN | 7584 |
 
 Số tổ chức và ba loại cạnh cuối bảng phụ thuộc luật tách đơn vị công tác nên thay đổi nếu sửa luật.
 
@@ -264,7 +267,7 @@ Các biến ở đầu tệp:
 | `SLEEP` | Thời gian nghỉ giữa các yêu cầu (giây) | 0.25 |
 | `OUT_DIR` | Thư mục đầu ra | `out` |
 
-Muốn đổi sang chủ đề khác (ví dụ CRISPR trong liệu pháp gen), sửa `QUERY`, xóa `raw_papers.jsonl` và `refs_cache.json` rồi chạy lại.
+Khi đổi sang chủ đề khác (ví dụ CRISPR trong liệu pháp gen), chỉnh `QUERY`, xóa `raw_papers.jsonl` và `refs_cache.json` rồi chạy lại.
 
 ## 10. Các tệp CSV
 
